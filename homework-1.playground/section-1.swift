@@ -1,5 +1,5 @@
 /*
-MU 101 Swift learning cource
+MU 101 Swift learning course
 
 Homework 1 - fibonacci sequence
 
