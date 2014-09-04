@@ -20,7 +20,7 @@ func fibonacci(n:Int) -> (Int,Int) {
     var prev = 0
     var val = 1
     
-    for i in 2...n {
+    for _ in 2...n {
       let tmp = val
       val += prev
       prev = tmp
