@@ -1,5 +1,5 @@
 /*
-MU 101 Swift learning course
+MU 110 Swift learning course
 
 Homework 1 - fibonacci sequence
 
@@ -35,5 +35,5 @@ println("fibonacci(\(testValue))=\(fibonacci(testValue))")
 //let testValue2 = -10 //Works as well
 //println("fibonacci(\(testValue2))=\(fibonacci(testValue2))")
 
-//let testValue3 = 42 //Works as well
+//let testValue3 = 42 //Works as well ;]
 //println("fibonacci(\(testValue3))=\(fibonacci(testValue3))")
