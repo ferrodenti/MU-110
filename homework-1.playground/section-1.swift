@@ -1,5 +1,5 @@
 /*
-MU 110 Swift learning course
+MU 110-Swift learning course
 
 Homework 1 - fibonacci sequence
 
@@ -9,7 +9,7 @@ func fibonacci(n:Int) -> (Int,Int) {
   
   switch n {
     
-  case let x where x < 0: // For negative N: F(-n) = (-1)pow(n+1) * (Fn)
+  case let x where x < 0: // For a negative N: F(-n) = (-1)pow(n+1) * (Fn)
     let fn = fibonacci(-n).1
     return (n, n%2==0 ? -fn : fn)
     
