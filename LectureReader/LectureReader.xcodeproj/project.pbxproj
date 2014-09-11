@@ -12,8 +12,10 @@
 		1D9460CE19BD072700981938 /* LectureReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9460CD19BD072700981938 /* LectureReaderTests.swift */; };
 		1D9460D819BD0B1C00981938 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9460D719BD0B1C00981938 /* Authentication.storyboard */; };
 		1D9460DB19BD0CEB00981938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9460DA19BD0CEB00981938 /* Main.storyboard */; };
-		1D9460DE19BD130A00981938 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9460DD19BD130A00981938 /* ViewController.swift */; };
+		1D9460DE19BD130A00981938 /* LecturesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9460DD19BD130A00981938 /* LecturesListController.swift */; };
 		1D9460E019BD132600981938 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9460DF19BD132600981938 /* LoginViewController.swift */; };
+		1DF5010819C187AB008F2DF6 /* LectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5010719C187AB008F2DF6 /* LectureViewController.swift */; };
+		1DF5010A19C192A2008F2DF6 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5010919C192A2008F2DF6 /* Lecture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,10 @@
 		1D9460CD19BD072700981938 /* LectureReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureReaderTests.swift; sourceTree = "<group>"; };
 		1D9460D719BD0B1C00981938 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authentication.storyboard; path = Storyboards/Authentication.storyboard; sourceTree = "<group>"; };
 		1D9460DA19BD0CEB00981938 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
-		1D9460DD19BD130A00981938 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
+		1D9460DD19BD130A00981938 /* LecturesListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LecturesListController.swift; path = Controllers/LecturesListController.swift; sourceTree = "<group>"; };
 		1D9460DF19BD132600981938 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		1DF5010719C187AB008F2DF6 /* LectureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LectureViewController.swift; path = Controllers/LectureViewController.swift; sourceTree = "<group>"; };
+		1DF5010919C192A2008F2DF6 /* Lecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lecture.swift; path = LectureReader/Models/Lecture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +130,9 @@
 		1D9460DC19BD12C400981938 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1D9460DD19BD130A00981938 /* ViewController.swift */,
+				1D9460DD19BD130A00981938 /* LecturesListController.swift */,
 				1D9460DF19BD132600981938 /* LoginViewController.swift */,
+				1DF5010719C187AB008F2DF6 /* LectureViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 		1D9460E119BD2E4700981938 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1DF5010919C192A2008F2DF6 /* Lecture.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -240,8 +246,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D9460E019BD132600981938 /* LoginViewController.swift in Sources */,
-				1D9460DE19BD130A00981938 /* ViewController.swift in Sources */,
+				1DF5010819C187AB008F2DF6 /* LectureViewController.swift in Sources */,
+				1D9460DE19BD130A00981938 /* LecturesListController.swift in Sources */,
 				1D9460BB19BD072700981938 /* AppDelegate.swift in Sources */,
+				1DF5010A19C192A2008F2DF6 /* Lecture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

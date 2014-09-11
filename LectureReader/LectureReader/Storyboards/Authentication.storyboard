@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="029-MW-NaQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="029-MW-NaQ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-342" y="143"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Пожалуйста, представьтесь-->
         <scene sceneID="6Gp-kv-2qt">
             <objects>
                 <viewController id="yVc-rJ-twe" customClass="LoginViewController" customModule="LectureReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,19 +57,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Зарегистрироваться"/>
                                 <connections>
-                                    <segue destination="tB6-aE-DRF" kind="push" id="F5i-Yc-CRD"/>
+                                    <segue destination="tB6-aE-DRF" kind="push" identifier="viewLection" id="F5i-Yc-CRD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="luE-cx-8Po"/>
+                    <navigationItem key="navigationItem" title="Пожалуйста, представьтесь" id="luE-cx-8Po"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31B-BM-uHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="773" y="8"/>
         </scene>
-        <!--View Controller-->
+        <!--Регистрация-->
         <scene sceneID="5He-d7-GyA">
             <objects>
                 <viewController id="tB6-aE-DRF" sceneMemberID="viewController">
@@ -90,7 +90,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Iw6-mW-FYC"/>
+                    <navigationItem key="navigationItem" title="Регистрация" id="Iw6-mW-FYC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXD-oK-GJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,9 +100,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination">
-            <size key="portraitSize" width="768" height="1024"/>
-            <size key="landscapeSize" width="1024" height="768"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
