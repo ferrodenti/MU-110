@@ -5,16 +5,14 @@
 //  Created by rad on 11.09.14.
 //  Copyright (c) 2014 rad. All rights reserved.
 //
+import Foundation
 
-class Lecture {
-    var title:String?
-    var subject:String?
-    var url:String?
-    
-    init(title:String, subject:String, url:String){
-        self.title = title
-        self.subject = subject
-        self.url = url
-       
-    }
+class Lecture : NSObject {
+    var name:String?
+    var data:String?
+    var descr:String?
+    var image:String?
+    var video:String?
+
+    //var url:String
 }

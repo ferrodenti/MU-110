@@ -9,24 +9,7 @@
 import UIKit
 
 class LecturesListController: UITableViewController {
-    
-    lazy var lectures:[Lecture] = {
-        var res:[Lecture] = []
-        let subjects:[String] = ["O языке swift", "О природе добра и зла", "O Cocoa", "О жизни", "О любви", "О том, о сем"]
-        
-
-        for i in 1...10{
-            res.append(Lecture(title: "Лекция № \(i)", subject: subjects[Int(rand()) % subjects.count], url: "http:\\example.com\\lecture\(i)"))
-        }
-        return res
-    }()
-    
-    func getLecture(index:Int) -> Lecture?{
-        return index < lectures.count ? lectures[index] : nil
-    }
-        
-        
-        
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,24 +25,28 @@ class LecturesListController: UITableViewController {
         {
             NSLog("user is already logged in")
         }
+        
+        LecturesRepository.Instance.loaded = {
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         // Dispose of any resources that can be recreated.
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return LecturesRepository.Instance.lectures.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("LectureCell") as UITableViewCell
-
         
-        if let lecture = getLecture(indexPath.row) {
-            cell.textLabel?.text = lecture.title
-            cell.detailTextLabel?.text = lecture.subject
+        if let lecture = LecturesRepository.Instance.getLecture(indexPath.row) {
+            cell.textLabel?.text = lecture.name
+            cell.detailTextLabel?.text = lecture.descr
         }
        
         return cell
@@ -69,9 +56,10 @@ class LecturesListController: UITableViewController {
         
         if segue.identifier == "viewLecture" {
             if let indexPath = tableView.indexPathForSelectedRow() {
-                if let lecture = getLecture(indexPath.row){
-                    var dst = segue.destinationViewController as LectureViewController
-                    dst.lecture = lecture
+                if let lecture = LecturesRepository.Instance.getLecture(indexPath.row){
+                    if let dst = segue.destinationViewController as? LectureViewController {
+	                    dst.lecture = lecture
+                    }
                 }
             }
         }

@@ -18,8 +18,8 @@ class LectureViewController: UIViewController {
         super.viewDidLoad()
 
         if let lecture = self.lecture {
-	        navigationItem.title = lecture.title
-    	    subjectLabel.text = lecture.subject
+	        navigationItem.title = lecture.name
+    	    subjectLabel.text = lecture.descr
         }
     }
 
