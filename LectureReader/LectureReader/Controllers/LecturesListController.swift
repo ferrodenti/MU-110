@@ -13,29 +13,28 @@ class LecturesListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var user = (0, isLoggedIn: false) //TODO: for debugging only
-        
-        if (!user.isLoggedIn) {
-            NSLog("User was not logged in")
+        if isUserLoggedIn() {
+            showLoginController()
+        }
 
-        	let loginController: UIViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateInitialViewController() as UIViewController
-            navigationController!.presentViewController(loginController, animated: true, completion: nil)
-        }
-    	else
-        {
-            NSLog("user is already logged in")
-        }
-        
         LecturesRepository.Instance.loaded = {
             self.tableView.reloadData()
         }
+    }
+    
+    func isUserLoggedIn() -> Bool{
+        return false
+    }
+    
+    func showLoginController(){
+        let loginController: UIViewController = UIStoryboard(name: "Authentication", bundle: nil).instantiateInitialViewController() as UIViewController
+        navigationController!.presentViewController(loginController, animated: false, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-        // Dispose of any resources that can be recreated.
-    }
+	}
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return LecturesRepository.Instance.lectures.count

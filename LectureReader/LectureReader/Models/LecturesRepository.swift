@@ -12,13 +12,20 @@ import Alamofire
 private let _materUpLecturesURL = "http://weekly.master-up.net/api/v1/lecture/list/"
 private var _lecturesRepository: LecturesRepository?
 
-class LecturesRepository {
+class LecturesRepository: NSObject {
     
     class var Instance: LecturesRepository {
-    	if _lecturesRepository == nil {
-        	_lecturesRepository = LecturesRepository()
+        
+	    struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var instance: LecturesRepository? = nil
         }
-        return _lecturesRepository!
+        
+        dispatch_once(&Static.onceToken, {
+			Static.instance = LecturesRepository()
+        });
+            
+        return Static.instance!
     }
     
     private var _lectures:[Lecture]?
@@ -26,6 +33,13 @@ class LecturesRepository {
         get {
             if _lectures == nil {
 				_lectures = []
+                
+                Alamofire.request(.GET, _materUpLecturesURL).responseJSON {
+                    request, response, json, error in
+                    println(json)
+                }
+                
+                println("task")
                 
                 Alamofire.request(.GET, _materUpLecturesURL).response(onLoaded)
             }
@@ -49,7 +63,7 @@ class LecturesRepository {
                             keyStr = "descr"
                         }
                         
-                        if (lecture.respondsToSelector(NSSelectorFromString(keyStr))) {
+                        if lecture.respondsToSelector(NSSelectorFromString(keyStr)) {
                             lecture.setValue(value, forKey: keyStr)
                         }
                     }

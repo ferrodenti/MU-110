@@ -59,7 +59,9 @@
                             <outlet property="delegate" destination="qJp-9C-LwG" id="WkY-8x-F8a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Лекции" id="xe3-Gd-NL1"/>
+                    <navigationItem key="navigationItem" title="Лекции" id="xe3-Gd-NL1">
+                        <barButtonItem key="leftBarButtonItem" title="Выйти" id="psC-Fm-CXN"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rL-lQ-wLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
